@@ -61,27 +61,14 @@ export default function Header({ currentPage, onNavigate }) {
           <div className="logo" style={{ display: 'flex', alignItems: 'center' }}>
             <a href="#home" onClick={(e) => { e.preventDefault(); onNavigate('home'); }} className="brand-wrap" style={{ 
               display:'flex', 
-              flexDirection: 'row',
               alignItems:'center', 
               textDecoration:'none',
-              transition: 'transform 0.3s ease',
-              gap: '12px'
+              transition: 'transform 0.3s ease'
             }}
             onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
             onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
             >
-              <img src="/zeyn-alsham-LOGO.png" alt="Zain Alsham Logo" style={{ height:'54px', objectFit:'contain' }} />
-              {/* Bolder script font using multi-directional text shadowing */}
-              <span className="brand-name" style={{ 
-                fontFamily: 'var(--font-script)', 
-                color: '#5c2d15', 
-                fontWeight: '900', 
-                fontSize: '36px', 
-                letterSpacing: '0.5px',
-                lineHeight: '1',
-                marginTop: '4px',
-                textShadow: '0.6px 0 0 #5c2d15, -0.6px 0 0 #5c2d15, 0 0.6px 0 #5c2d15, 0 -0.6px 0 #5c2d15'
-              }}>{CONTACT.name}</span>
+              <img src="/Zain-Al-Sham-Logo-Horizontal.png" alt="Zain Al Sham Restaurant" style={{ height:'60px', objectFit:'contain' }} />
             </a>
           </div>
 
