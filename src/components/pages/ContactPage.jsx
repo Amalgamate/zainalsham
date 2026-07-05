@@ -99,7 +99,8 @@ export default function ContactPage() {
                   <div>
                     <strong style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', textTransform: 'uppercase', color: 'var(--color-text-dark)', letterSpacing: '1.5px', display: 'block', marginBottom: '4px' }}>Address</strong>
                     <span style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', color: 'var(--color-text-mid)' }}>
-                      22 Fifth Parklands Ave, Nairobi, Kenya
+                      <strong style={{ display: 'block', color: 'var(--color-text-dark)' }}>Zain Al-Sham Restaurant</strong>
+                      5th Parklands Avenue, The Place
                     </span>
                   </div>
                 </div>
@@ -116,7 +117,7 @@ export default function ContactPage() {
                   <div>
                     <strong style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', textTransform: 'uppercase', color: 'var(--color-text-dark)', letterSpacing: '1.5px', display: 'block', marginBottom: '4px' }}>Call Front Desk</strong>
                     <a href="tel:+254728878856" style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', color: 'var(--color-rust)', textDecoration: 'none', fontWeight: '600' }}>
-                      +254 7 2887 8856
+                      +254 728 878 856
                     </a>
                   </div>
                 </div>

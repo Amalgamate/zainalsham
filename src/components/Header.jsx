@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 
 const CONTACT = {
-  name:       'Zain Alsham',
-  phone:      '+2547 2887 8856',
+  name:       'Zain Al-Sham Restaurant',
+  phone:      '+254 728 878 856',
   phoneLabel: 'For Orders, Call',
   venue:      'The Place @ 5th',
-  address:    '22 Fifth Parklands Ave, Nairobi'
+  address:    '5th Parklands Avenue, The Place'
 }
 
 export default function Header({ currentPage, onNavigate }) {
@@ -147,9 +147,12 @@ export default function Header({ currentPage, onNavigate }) {
               </ul>
             </nav>
             <div style={{ paddingTop:'24px', borderTop:'1px solid rgba(158,83,43,0.1)', marginTop:'16px' }}>
-              <div style={{ display:'flex', alignItems:'center', gap:'8px', marginBottom:'12px', fontSize:'13px', color:'var(--color-text-mid)' }}>
-                <i className="fa-solid fa-location-dot" style={{ color:'var(--color-rust)' }} />
-                {CONTACT.venue}, {CONTACT.address}
+              <div style={{ display:'flex', alignItems:'flex-start', gap:'8px', marginBottom:'12px', fontSize:'13px', color:'var(--color-text-mid)' }}>
+                <i className="fa-solid fa-location-dot" style={{ color:'var(--color-rust)', marginTop:'2px', flexShrink:0 }} />
+                <span>
+                  <strong style={{ display:'block', color:'var(--color-text-dark)', fontWeight:'600' }}>{CONTACT.name}</strong>
+                  {CONTACT.address}
+                </span>
               </div>
               <a href={`tel:${CONTACT.phone.replace(/\s/g,'')}`}
                 style={{ display:'flex', alignItems:'center', gap:'8px', color:'var(--color-rust)', fontWeight:'600', fontSize:'14px', marginBottom:'16px', textDecoration:'none' }}>
@@ -163,8 +166,102 @@ export default function Header({ currentPage, onNavigate }) {
           <div style={{ flex:1 }} onClick={() => setOpen(false)} />
         </div>
       )}
+      {/* ── Mobile Bottom Navigation Bar ── */}
+      <div className="mobile-bottom-nav">
+        {[
+          { icon: 'fa-house', label: 'Home', page: 'home' },
+          { icon: 'fa-utensils', label: 'Dining', page: 'dining' },
+          { icon: 'fa-compass', label: 'Our Story', page: 'about' },
+          { icon: 'fa-phone', label: 'Contact', page: 'contact' },
+          { icon: 'fa-book-open', label: 'Menu', action: 'menu' }
+        ].map(item => {
+          const isActive = currentPage === item.page;
+          return (
+            <button
+              key={item.label}
+              onClick={() => {
+                if (item.action === 'menu') {
+                  window.open('/Zain%20Al%20Sham%20Menu%202026.pdf', '_blank');
+                } else {
+                  onNavigate(item.page);
+                }
+              }}
+              className="bottom-nav-item"
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '4px',
+                background: 'transparent',
+                border: 'none',
+                color: isActive ? 'var(--color-rust)' : 'rgba(250,245,238,0.6)',
+                fontSize: '11px',
+                fontWeight: isActive ? '600' : '400',
+                cursor: 'pointer',
+                transition: 'color 0.3s',
+                padding: '8px 0',
+                flex: 1
+              }}
+            >
+              <i className={`fa-solid ${item.icon}`} style={{ fontSize: '18px', color: isActive ? 'var(--color-rust)' : 'inherit' }} />
+              <span>{item.label}</span>
+            </button>
+          )
+        })}
+      </div>
 
-      <style>{`.hide-mobile { display:inline; } @media(max-width:700px){ .hide-mobile{display:none;} }`}</style>
+      <style>{`
+        .hide-mobile { display:inline; } 
+        @media(max-width:700px){ 
+          .hide-mobile{display:none;} 
+        }
+        @media (max-width: 768px) {
+          /* Center the logo on mobile */
+          #header .header-main .container {
+            justify-content: center !important;
+          }
+          /* Hide the hamburger button */
+          #header .mobile-toggle {
+            display: none !important;
+          }
+          /* Lift floating buttons up on mobile so they don't overlap bottom nav */
+          .floating-whatsapp {
+            bottom: 80px !important;
+          }
+          .floating-totop {
+            bottom: 80px !important;
+          }
+          /* Hide desktop floating menu button */
+          .floating-menu-btn {
+            display: none !important;
+          }
+          /* Mobile bottom nav */
+          .mobile-bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 64px;
+            background: #120905;
+            border-top: 1px solid rgba(223, 189, 115, 0.15);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 9999;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+            padding-bottom: env(safe-area-inset-bottom);
+          }
+          body {
+            padding-bottom: 64px;
+          }
+        }
+        @media (min-width: 769px) {
+          .mobile-bottom-nav {
+            display: none !important;
+          }
+        }
+      `}</style>
     </header>
   )
 }

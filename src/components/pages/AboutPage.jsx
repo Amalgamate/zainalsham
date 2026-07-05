@@ -173,7 +173,7 @@ export default function AboutPage() {
                 lineHeight: '1.8',
                 margin: '0 0 35px 0'
               }}>
-                Whether you're dining in our restaurant, or relaxing in the Saffron Lounge listening to the live Oud, we aim to provide an unforgettable international experience with a vibrant local Nairobi touch.
+                Whether you're dining in our restaurant or gathering with family for a special occasion, we bring the authentic warmth of Somali and Syrian hospitality to every table — offering an unforgettable culinary experience with a vibrant local Nairobi touch.
               </p>
 
               {/* Rectangular Outline Button */}

@@ -86,7 +86,7 @@ export default function SpecialsBoard() {
             color: 'rgba(250,245,238,0.5)', letterSpacing: '2px',
             textTransform: 'uppercase', margin: 0
           }}>
-            {activeDay} · Curated by Executive Chef Arif Al-Khalidi
+            {activeDay} · Curated by Executive Chef Abbas Dahir
           </p>
         </div>
 
@@ -160,7 +160,7 @@ export default function SpecialsBoard() {
                   <p style={{
                     fontFamily: 'var(--font-sans)', fontSize: '11px',
                     color: 'rgba(250,245,238,0.5)', margin: '2px 0 0'
-                  }}>5:00 PM – 8:00 PM · Daily · Saffron Lounge</p>
+                  }}>5:00 PM – 8:00 PM · Daily · 5th Parklands Avenue, The Place</p>
                 </div>
               </div>
 

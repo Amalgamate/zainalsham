@@ -61,54 +61,97 @@ function DeliveryStrip() {
   )
 }
 
-// ── PWA Install Banner ──────────────────────────────────────────
+// ── PWA Install Pop-up ──────────────────────────────────────────
 function PwaBanner() {
   const [deferredPrompt, setDeferredPrompt] = useState(null)
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
+    // Detect if already installed
+    if (localStorage.getItem('pwa-installed') === 'true') {
+      return
+    }
+
     const handler = (e) => {
       e.preventDefault()
+      
+      // Check if dismissed in the last 24 hours
+      const dismissedTime = localStorage.getItem('pwa-dismissed-time')
+      const oneDay = 24 * 60 * 60 * 1000
+      if (dismissedTime && (Date.now() - parseInt(dismissedTime, 10)) < oneDay) {
+        return
+      }
+
       setDeferredPrompt(e)
       setVisible(true)
     }
+
+    const installHandler = () => {
+      localStorage.setItem('pwa-installed', 'true')
+      setVisible(false)
+    }
+
     window.addEventListener('beforeinstallprompt', handler)
-    return () => window.removeEventListener('beforeinstallprompt', handler)
+    window.addEventListener('appinstalled', installHandler)
+
+    return () => {
+      window.removeEventListener('beforeinstallprompt', handler)
+      window.removeEventListener('appinstalled', installHandler)
+    }
   }, [])
 
   const install = async () => {
     if (!deferredPrompt) return
     deferredPrompt.prompt()
-    await deferredPrompt.userChoice
+    const { outcome } = await deferredPrompt.userChoice
+    if (outcome === 'accepted') {
+      localStorage.setItem('pwa-installed', 'true')
+    }
     setDeferredPrompt(null)
+    setVisible(false)
+  }
+
+  const dismiss = () => {
+    localStorage.setItem('pwa-dismissed-time', Date.now().toString())
     setVisible(false)
   }
 
   if (!visible) return null
 
   return (
-    <div className="pwa-banner" role="complementary" aria-label="Install app">
-      <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flex: 1 }}>
+    <div className="pwa-popup-overlay" onClick={dismiss}>
+      <div className="pwa-popup-container" onClick={(e) => e.stopPropagation()}>
         <div style={{
-          width: '44px', height: '44px', borderRadius: '10px',
-          background: 'var(--gold-gradient)',
-          display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0
+          width: '56px', height: '56px', borderRadius: '50%',
+          background: 'var(--gold-gradient)', margin: '0 auto 20px',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          boxShadow: '0 0 15px rgba(223, 189, 115, 0.3)'
         }}>
-          <i className="fa-solid fa-utensils" style={{ color: '#120905', fontSize: '18px' }} />
+          <i className="fa-solid fa-utensils" style={{ color: '#120905', fontSize: '24px' }} />
         </div>
-        <p className="pwa-banner-text">
-          <strong>Add Zain Alsham to your Home Screen</strong>
-          Order food, track delivery &amp; get happy hour alerts — works offline too.
+        
+        <h4 style={{
+          fontFamily: 'var(--font-serif)', fontSize: '20px', color: 'var(--color-cream)',
+          margin: '0 0 10px 0', textTransform: 'uppercase', letterSpacing: '1px'
+        }}>
+          Add Zain Alsham
+        </h4>
+        <p style={{
+          fontFamily: 'var(--font-sans)', fontSize: '13px', color: 'rgba(250,245,238,0.7)',
+          lineHeight: '1.6', margin: '0 0 24px 0'
+        }}>
+          Install our digital app on your home screen to order food faster, browse the menu offline, and get direct happy hour alerts.
         </p>
-      </div>
-      <div className="pwa-banner-actions">
-        <button className="pwa-install-btn" onClick={install}>
-          <i className="fa-solid fa-download" style={{ marginRight: '6px' }} />
-          Install App
-        </button>
-        <button className="pwa-dismiss-btn" onClick={() => setVisible(false)}>
-          Not now
-        </button>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          <button className="pwa-install-btn" onClick={install} style={{ width: '100%', borderRadius: '2px' }}>
+            <i className="fa-solid fa-plus" style={{ marginRight: '8px' }} />
+            Add to Home Screen
+          </button>
+          <button className="pwa-dismiss-btn" onClick={dismiss} style={{ width: '100%', borderRadius: '2px', border: 'none', background: 'transparent' }}>
+            Not Now
+          </button>
+        </div>
       </div>
     </div>
   )
@@ -180,15 +223,18 @@ export default function App() {
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
-      </a>
-
-
-
-      {/* ── Redesigned Floating Menu Button ──────────────── */}
+      </a>      {/* ── Redesigned Floating Menu Button ──────────────── */}
       <div
         className="floating-menu-btn"
         title="View Menu (PDF)"
-        onClick={() => setShowMenuModal(true)}
+        onClick={() => {
+          const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.innerWidth < 768;
+          if (isMobile) {
+            window.open('/Zain%20Al%20Sham%20Menu%202026.pdf', '_blank');
+          } else {
+            setShowMenuModal(true);
+          }
+        }}
       >
         <i className="fa-solid fa-utensils" />
         <span>Menu</span>

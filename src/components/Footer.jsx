@@ -2,10 +2,10 @@ import React from 'react'
 
 // ─── Global Contact Details ───
 const CONTACT = {
-  name: 'Zain Alsham',
-  address: '22 Fifth Parklands Ave, Nairobi',
+  name: 'Zain Al-Sham Restaurant',
+  address: '5th Parklands Avenue, The Place',
   venue: 'The Place @ 5th',
-  phone: '+2547 2887 8856',
+  phone: '+254 728 878 856',
   phoneLabel: 'For Orders, Call',
   email: 'hello@zainalsham.com'
 }
@@ -45,7 +45,7 @@ export default function Footer({ onNavigate }) {
                 margin: '0 0 20px 0',
                 maxWidth: '240px'
               }}>
-                A sanctuary of Indian-Arabic flavours, where heritage recipes meet modern artistry.
+                Authentic Somali & Syrian flavours, where time-honored recipes meet warm Nairobi hospitality.
               </p>
               <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
                 {[

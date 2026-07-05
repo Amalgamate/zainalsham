@@ -17,17 +17,16 @@ const services = [
     description: 'Bring your loved ones together to enjoy the authentic flavors of Somalia and Syria in a warm, welcoming setting.'
   },
   {
-    id: 'lounge',
-    image: 'https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=800&auto=format&fit=crop',
-    imageAlt: 'Shisha Lounge',
+    id: 'catering',
+    image: '/images/outside catering.jpeg',
+    imageAlt: 'Outside Catering Services',
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M8 22h8M12 11V22M8 2C8 5.31 12 8 12 8s4-2.69 4-6" />
-        <path d="M5 11h14a2 2 0 0 1 0 4H5a2 2 0 0 1 0-4z" />
+        <path d="M3 11l19-9-9 19-2-8-8-2z" />
       </svg>
     ),
-    title: 'SHISHA & LOUNGE',
-    description: 'Relax in our dedicated Arabian lounge adorned with silk cushions and lantern lighting, offering premium shisha, Arabic coffee, and rare teas.'
+    title: 'CATERING SERVICES',
+    description: 'Bring the authentic flavors of Somalia and Syria to your special occasion with our professional catering services.'
   }
 ]
 

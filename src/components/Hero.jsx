@@ -62,9 +62,9 @@ export default function Hero() {
                 className="eyebrow" 
                 style={{ 
                   fontFamily: 'var(--font-sans)', 
-                  fontSize: '14px', 
+                  fontSize: 'clamp(11px, 2vw, 14px)', 
                   fontWeight: '600', 
-                  letterSpacing: '4px', 
+                  letterSpacing: 'clamp(2px, 3vw, 4px)', 
                   color: 'var(--color-gold)', 
                   textTransform: 'uppercase',
                   marginBottom: '15px'
@@ -75,7 +75,7 @@ export default function Hero() {
               <h1 
                 style={{ 
                   fontFamily: 'var(--font-serif)', 
-                  fontSize: '64px', 
+                  fontSize: 'clamp(32px, 6vw, 64px)', 
                   fontWeight: '500', 
                   lineHeight: '1.15', 
                   color: 'var(--color-cream)', 
@@ -89,7 +89,7 @@ export default function Hero() {
                 className="text-cursive" 
                 style={{ 
                   fontFamily: 'var(--font-script)', 
-                  fontSize: '32px', 
+                  fontSize: 'clamp(20px, 4vw, 32px)', 
                   color: '#fff', 
                   opacity: 0.9, 
                   margin: '0 auto 30px auto', 
