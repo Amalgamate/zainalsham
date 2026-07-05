@@ -14,9 +14,9 @@ const items = [
     shapeClass: 'center-pointed-arch'
   },
   {
-    title: 'SAFFRON KUNAFEH',
+    title: 'HALAWIYAT',
     img: '/images/saffron_kunafa.png',
-    text: 'Crispy, warm pastry shredded and soaked in saffron syrup, garnished with fresh pistachios.',
+    text: 'Savor the finest collection of authentic Arabic sweets, featuring delicate pastries, premium nuts, and aromatic syrups inspired by generations of culinary tradition.',
     shapeClass: 'right-arch'
   }
 ]
