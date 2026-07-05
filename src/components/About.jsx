@@ -2,18 +2,19 @@ import React from 'react'
 
 const services = [
   {
-    id: 'live-music',
-    image: 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=800&auto=format&fit=crop',
-    imageAlt: 'Live Music Performance',
+    id: 'family-dining',
+    image: '/images/Somali_Family_Dining.png',
+    imageAlt: 'Somali Family Dining',
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M9 18V5l12-2v13" />
-        <circle cx="6" cy="18" r="3" />
-        <circle cx="18" cy="16" r="3" />
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
       </svg>
     ),
-    title: 'LIVE MUSIC & OUD',
-    description: 'Immerse yourself in the soulful melodies of live Arabic Oud and Indian Santoor performances, held every weekend evening in our main dining hall.'
+    title: 'FAMILY DINING',
+    description: 'Bring your loved ones together to enjoy the authentic flavors of Somalia and Syria in a warm, welcoming setting.'
   },
   {
     id: 'lounge',
