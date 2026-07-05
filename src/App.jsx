@@ -182,11 +182,7 @@ export default function App() {
         </svg>
       </a>
 
-      {/* ── Cart Badge ──────────────────────────────────── */}
-      <div className="floating-cart-badge" role="button" aria-label="View cart">
-        <i className="fa-solid fa-bag-shopping" style={{ fontSize:'18px', color:'var(--color-rust)' }} />
-        <span className="floating-cart-count">0</span>
-      </div>
+
 
       {/* ── Redesigned Floating Menu Button ──────────────── */}
       <div

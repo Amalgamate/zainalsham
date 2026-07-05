@@ -48,10 +48,17 @@ export default function Footer({ onNavigate }) {
                 A sanctuary of Indian-Arabic flavours, where heritage recipes meet modern artistry.
               </p>
               <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
-                {['IG', 'YT', 'FB', 'TW'].map(s => (
+                {[
+                  { icon: 'fa-brands fa-instagram', href: 'https://www.instagram.com/zainalshaam2024/?hl=en', label: 'Instagram' },
+                  { icon: 'fa-brands fa-facebook-f', href: 'https://www.facebook.com/profile.php?id=100076351324705', label: 'Facebook' },
+                  { icon: 'fa-brands fa-tiktok', href: 'https://www.tiktok.com/@zainalshamkenya', label: 'TikTok' }
+                ].map(s => (
                   <a
-                    key={s}
-                    href="#"
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
                     style={{
                       width: '36px',
                       height: '36px',
@@ -59,12 +66,10 @@ export default function Footer({ onNavigate }) {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      fontSize: '11px',
-                      fontWeight: '700',
+                      fontSize: '14px',
                       color: 'var(--color-cream)',
                       transition: 'var(--transition-smooth)',
-                      textDecoration: 'none',
-                      letterSpacing: '0'
+                      textDecoration: 'none'
                     }}
                     onMouseOver={e => {
                       e.currentTarget.style.background = 'var(--gold-gradient)'
@@ -77,7 +82,7 @@ export default function Footer({ onNavigate }) {
                       e.currentTarget.style.color = 'var(--color-cream)'
                     }}
                   >
-                    {s}
+                    <i className={s.icon} />
                   </a>
                 ))}
               </div>

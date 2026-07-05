@@ -28,12 +28,11 @@ export default function Header({ currentPage, onNavigate }) {
           {/* Social icons with FA */}
           <div style={{ display:'flex', gap:'18px', alignItems:'center' }}>
             {[
-              { icon:'fa-brands fa-instagram', label:'Instagram', href:'#' },
-              { icon:'fa-brands fa-facebook-f',label:'Facebook',  href:'#' },
-              { icon:'fa-brands fa-youtube',   label:'YouTube',   href:'#' },
-              { icon:'fa-brands fa-tiktok',    label:'TikTok',    href:'#' }
+              { icon:'fa-brands fa-instagram', label:'Instagram', href:'https://www.instagram.com/zainalshaam2024/?hl=en' },
+              { icon:'fa-brands fa-facebook-f',label:'Facebook',  href:'https://www.facebook.com/profile.php?id=100076351324705' },
+              { icon:'fa-brands fa-tiktok',    label:'TikTok',    href:'https://www.tiktok.com/@zainalshamkenya' }
             ].map(s => (
-              <a key={s.label} href={s.href} aria-label={s.label} className="social-icon-link"
+              <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="social-icon-link"
                 style={{ display:'inline-flex', alignItems:'center', gap:'5px', color:'rgba(250,245,238,0.7)', fontSize:'11px', letterSpacing:'0.5px', textDecoration:'none' }}>
                 <i className={s.icon} style={{ fontSize:'13px' }} />
                 <span className="hide-mobile">{s.label}</span>
