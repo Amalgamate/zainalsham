@@ -1,0 +1,28 @@
+/***************************************************
+  Mixins Themes 
+/***************************************************/
+/* Mixin Normal*/
+/* Mixin Clear */
+/* Mixin Border */
+/*background RGBA
+============================================*/
+/***************************************************
+  Mixins RTL Themes 
+/***************************************************/
+/************************************ 
+	Override Bootstrap 
+*************************************/
+/**
+ * Web Application Prefix Apply For Making Owner Styles
+ */
+/**
+ *   Blocks Layout Selectors 
+ */
+/***********************************************************************/
+.keep-header #header.navbar-fixed-top {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1000; }
+
+/*# sourceMappingURL=headerposition2494514574.css.map */

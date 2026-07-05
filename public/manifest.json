@@ -1,0 +1,23 @@
+{
+  "name": "Zain Alsham Hotel & Dining",
+  "short_name": "Zain Alsham",
+  "description": "Experience luxury lodging, Live Music Oud & Santoor dining, and delivery services at Zain Alsham, Nairobi.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf5ee",
+  "theme_color": "#120905",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/zeyn-alsham-LOGO.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/zeyn-alsham-LOGO.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,426 @@
+/***************************************************
+  Mixins Themes 
+/***************************************************/
+/* Mixin Normal*/
+/* Mixin Clear */
+/* Mixin Border */
+/*background RGBA
+============================================*/
+/***************************************************
+  Mixins RTL Themes 
+/***************************************************/
+/************************************ 
+	Override Bootstrap 
+*************************************/
+/**
+ * Web Application Prefix Apply For Making Owner Styles
+ */
+/**
+ *   Blocks Layout Selectors 
+ */
+/***********************************************************************/
+/* block top search */
+#search_block_top {
+  position: absolute;
+  right: 26%;
+  top: 34px; }
+
+#search_block_top p {
+  padding: 0; }
+
+.home_2 #leo_search_block_top h4 {
+  color: #FFFFFF; }
+
+#search_block_top #search_query_top {
+  padding: 0 5px;
+  height: 23px;
+  width: 300px;
+  /* 310 */
+  border: 1px solid #666;
+  border-right: 0 !important;
+  color: #666;
+  background: url(img/bg_search_input.png) repeat-x 0 0 #fff;
+  float: left; }
+
+#search_block_top .button {
+  border: none;
+  border-radius: 0;
+  color: #fff;
+  text-transform: uppercase;
+  background: url(img/bg_search_submit.png) repeat-x 0 0 #101010;
+  float: left;
+  height: 25px; }
+
+form#searchbox {
+  padding-top: 5px; }
+
+form#searchbox label {
+  color: #333;
+  margin-bottom: 1px; }
+
+form#searchbox input#leo_search_query_block {
+  border: 1px solid #cccccc;
+  -webkit-border-radius: 3px !important;
+  -moz-border-radius: 3px !important;
+  border-radius: 3px !important;
+  height: 18px;
+  margin-top: 10px; }
+
+form#searchbox input#search_button {
+  padding: 1px 4px; }
+
+.list-cate-wrapper {
+  position: relative; }
+
+.list-cate {
+  width: 100%;
+  padding: 0px; }
+
+.cate-item {
+  display: block;
+  padding: 10px; }
+
+#leosearchtopbox a.cate-item.active,
+#leosearchtopbox a.cate-item:hover,
+#leosearchbox a.cate-item.active,
+#leosearchbox a.cate-item:hover {
+  background: #865439;
+  color: #fff; }
+
+#dropdownListCate,
+#dropdownListCateTop {
+  cursor: pointer;
+  display: block;
+  padding: 5px 0px 5px 5px; }
+
+#leosearchtopbox #dropdownListCateTop:hover,
+#leosearchbox #dropdownListCate:hover {
+  color: #414141; }
+
+#leo_search_block_top .title_block {
+  line-height: 14px;
+  margin: 0;
+  font-size: 0;
+  text-transform: uppercase;
+  font-family: "Belleza";
+  padding-bottom: 0;
+  cursor: pointer; }
+  @media (max-width: 991px) {
+    #leo_search_block_top .title_block {
+      font-size: 0; } }
+  #leo_search_block_top .title_block:before {
+    content: "Search";
+    font-size: 14px;
+    font-weight: 400;
+    background-color: transparent;
+    letter-spacing: 0.2rem;
+    bottom: 0;
+    position: relative;
+    display: inline-block; }
+    @media (max-width: 1221px) {
+      #leo_search_block_top .title_block:before {
+        display: none; } }
+  #leo_search_block_top .title_block:after {
+    content: "\f002";
+    position: relative;
+    bottom: -5px;
+    margin: auto;
+    text-align: center;
+    font-family: "Font Awesome 5 Pro";
+    margin-left: 6px;
+    font-size: 24px;
+    font-weight: 200; }
+    .rtl #leo_search_block_top .title_block:after {
+      margin-right: 6px;
+      margin-left: inherit; }
+    @media (max-width: 991px) {
+      #leo_search_block_top .title_block:after {
+        left: 0;
+        margin-left: 0;
+        bottom: -16px; } }
+    @media (max-width: 576px) {
+      #leo_search_block_top .title_block:after {
+        bottom: -1px; } }
+#leo_search_block_top label[for="search_query_block"] {
+  display: none; }
+#leo_search_block_top label {
+  display: none; }
+#leo_search_block_top .block_content {
+  padding: 0 0 0 0px;
+  position: relative;
+  width: 100%; }
+  .rtl #leo_search_block_top .block_content {
+    padding: 0 0px 0 0; }
+  #leo_search_block_top .block_content i {
+    color: #000000;
+    font-size: 24px; }
+#leo_search_block_top .list-cate-wrapper {
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 45px;
+  display: none;
+  left: 0; }
+  .rtl #leo_search_block_top .list-cate-wrapper {
+    right: 0;
+    left: auto; }
+  @media (max-width: 575px) {
+    #leo_search_block_top .list-cate-wrapper {
+      display: none; } }
+  #leo_search_block_top .list-cate-wrapper:before {
+    content: "";
+    width: 1px;
+    height: 25px;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    background: #eee;
+    display: none; }
+    .rtl #leo_search_block_top .list-cate-wrapper:before {
+      left: 0;
+      right: auto; }
+  #leo_search_block_top .list-cate-wrapper .select-title {
+    height: 45px;
+    overflow: hidden;
+    line-height: 45px;
+    text-transform: capitalize;
+    color: #999; }
+    #leo_search_block_top .list-cate-wrapper .select-title i {
+      position: absolute;
+      top: 14px;
+      right: 10px; }
+      .rtl #leo_search_block_top .list-cate-wrapper .select-title i {
+        left: 10px;
+        right: auto; }
+  #leo_search_block_top .list-cate-wrapper .dropdown-menu {
+    font-size: 13px;
+    max-height: 230px;
+    overflow: auto;
+    overflow-x: hidden; }
+#leo_search_block_top #dropdownListCateTop {
+  padding: 0 25px;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+  #leo_search_block_top #dropdownListCateTop i {
+    font-size: 14px; }
+#leo_search_block_top .form-control {
+  background: none;
+  border: 0;
+  height: 43px;
+  line-height: 43px;
+  padding: 0 45px 0 15px;
+  border-radius: 0;
+  outline: 0; }
+  .rtl #leo_search_block_top .form-control {
+    padding: 45px 15px 45px 45px; }
+  @media (max-width: 767px) {
+    #leo_search_block_top .form-control {
+      font-size: 12px; } }
+#leo_search_block_top .btn {
+  width: 50px;
+  height: 44px;
+  line-height: 10px;
+  border: 0;
+  padding: 0;
+  font-size: 16px;
+  text-align: center;
+  background: none;
+  color: #865439;
+  position: absolute;
+  top: 0;
+  right: 0; }
+  .rtl #leo_search_block_top .btn {
+    left: 0;
+    right: auto; }
+  #leo_search_block_top .btn:hover {
+    color: #000; }
+#leo_search_block_top form {
+  position: absolute;
+  background-color: #ffffff;
+  width: 350px;
+  top: 50px;
+  transform: translateY(-10px);
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.7);
+  border: 1px solid transparent; }
+  @media (max-width: 1300px) {
+    #leo_search_block_top form {
+      width: 270px; } }
+  @media (max-width: 992px) {
+    #leo_search_block_top form {
+      width: 240px; } }
+
+.lang-de #leo_search_block_top .title_block:before {
+  content: "Suche"; }
+  @media (max-width: 1221px) {
+    .lang-de #leo_search_block_top .title_block:before {
+      display: none; } }
+
+.lang-it #leo_search_block_top .title_block:before {
+  content: "Ricerca"; }
+  @media (max-width: 1221px) {
+    .lang-it #leo_search_block_top .title_block:before {
+      display: none; } }
+
+.lang-es #leo_search_block_top .title_block:before {
+  content: "Buscar"; }
+  @media (max-width: 1221px) {
+    .lang-es #leo_search_block_top .title_block:before {
+      display: none; } }
+
+.lang-fr #leo_search_block_top .title_block:before {
+  content: "Chercher"; }
+  @media (max-width: 1221px) {
+    .lang-fr #leo_search_block_top .title_block:before {
+      display: none; } }
+
+#leo_search_block_top.active form {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-3px); }
+
+@media (max-width: 1220px) {
+  .row_nav #leosearchtopbox {
+    left: -190px;
+    top: 55px; }
+    .rtl .row_nav #leosearchtopbox {
+      right: -190px;
+      left: auto; } }
+@media (max-width: 992px) {
+  .row_nav #leosearchtopbox {
+    left: -50px; }
+    .rtl .row_nav #leosearchtopbox {
+      right: -50px;
+      left: auto; } }
+@media (max-width: 576px) {
+  .row_nav #leosearchtopbox {
+    top: 40px; } }
+@media (max-width: 1220px) {
+  .row_nav .search_2 #leosearchtopbox {
+    right: -130px;
+    top: 60px;
+    left: auto; }
+    .rtl .row_nav .search_2 #leosearchtopbox {
+      left: -130px;
+      right: auto; } }
+@media (max-width: 576px) {
+  .row_nav .search_2 #leosearchtopbox {
+    top: 50px; } }
+@media (max-width: 576px) {
+  .row_nav .search_top2 #leosearchtopbox {
+    left: -35px; }
+    .rtl .row_nav .search_top2 #leosearchtopbox {
+      right: -35px;
+      left: auto; } }
+
+.home_4 #leo_search_block_top {
+  margin-bottom: 0; }
+  .home_4 #leo_search_block_top .title_block {
+    color: #fff; }
+
+@media (max-width: 991px) {
+  .row_nav .search_top {
+    bottom: 41px; } }
+@media (max-width: 576px) {
+  .row_nav .search_top {
+    bottom: 27px; } }
+
+#leo_search_block_top.show form {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-3px); }
+
+.logo_menu3 #leo_search_block_top form {
+  left: -50px; }
+  @media (max-width: 1220px) {
+    .logo_menu3 #leo_search_block_top form {
+      left: -150px; } }
+  @media (max-width: 576px) {
+    .logo_menu3 #leo_search_block_top form {
+      left: -45px; } }
+.logo_menu3 #leo_search_block_top .title_block:before {
+  bottom: 5px; }
+
+.leoproductsearch-result {
+  position: relative; }
+
+.ac_results {
+  text-align: left; }
+  .rtl .ac_results {
+    text-align: right; }
+
+.logo_menu #search_widget {
+  margin-bottom: 0; }
+  .logo_menu #search_widget a {
+    display: none; }
+  .logo_menu #search_widget form {
+    position: relative;
+    margin-top: 10px; }
+    .logo_menu #search_widget form input {
+      color: #000000;
+      border: none !important;
+      overflow: hidden;
+      width: 86px;
+      outline: none;
+      box-shadow: none;
+      text-transform: uppercase;
+      font-size: 14px;
+      background-color: transparent; }
+    .logo_menu #search_widget form .ui-autocomplete-input::placeholder {
+      color: #000000 !important; }
+    .logo_menu #search_widget form button {
+      background-color: transparent;
+      color: #666;
+      position: absolute;
+      left: 70px; }
+
+#header .home_2 #search_widget form input {
+  color: #FFFFFF !important;
+  background-color: transparent; }
+#header .home_2 #search_widget form .ui-autocomplete-input::placeholder {
+  color: #FFFFFF !important; }
+#header .home_2 #search_widget form button {
+  color: #FFFFFF; }
+#header .home_2 .navbar-nav > li.nav-item > a:hover {
+  color: #865439; }
+
+.logo_menu3 .col_search3 #search_widget {
+  position: initial;
+  width: auto;
+  float: left; }
+  .logo_menu3 .col_search3 #search_widget a {
+    display: none; }
+  .logo_menu3 .col_search3 #search_widget form {
+    width: 84px !important;
+    margin-right: 15px; }
+    .logo_menu3 .col_search3 #search_widget form input {
+      color: #FFFFFF !important;
+      background-color: transparent;
+      border: none !important;
+      overflow: hidden;
+      width: 84px;
+      outline: none;
+      box-shadow: none;
+      text-transform: uppercase;
+      font-size: 14px; }
+    .logo_menu3 .col_search3 #search_widget form .ui-autocomplete-input::placeholder {
+      color: #FFFFFF !important; }
+    .logo_menu3 .col_search3 #search_widget form button {
+      background-color: transparent;
+      margin-right: -25px; }
+
+@media (max-width: 991px) {
+  #search_widget form {
+    margin-top: 0px; }
+    #search_widget form button {
+      margin-right: -5px !important; } }
+.no-products {
+  padding: 8px 12px; }
+
+.logo_menu3 .block {
+  margin-right: 10px; }
+
+/*# sourceMappingURL=leosearch.css.map */

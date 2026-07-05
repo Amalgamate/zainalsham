@@ -1,0 +1,126 @@
+import React from 'react'
+
+const services = [
+  {
+    id: 'live-music',
+    image: 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=800&auto=format&fit=crop',
+    imageAlt: 'Live Music Performance',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M9 18V5l12-2v13" />
+        <circle cx="6" cy="18" r="3" />
+        <circle cx="18" cy="16" r="3" />
+      </svg>
+    ),
+    title: 'LIVE MUSIC & OUD',
+    description: 'Immerse yourself in the soulful melodies of live Arabic Oud and Indian Santoor performances, held every weekend evening in our main dining hall.'
+  },
+  {
+    id: 'lounge',
+    image: 'https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=800&auto=format&fit=crop',
+    imageAlt: 'Shisha Lounge',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M8 22h8M12 11V22M8 2C8 5.31 12 8 12 8s4-2.69 4-6" />
+        <path d="M5 11h14a2 2 0 0 1 0 4H5a2 2 0 0 1 0-4z" />
+      </svg>
+    ),
+    title: 'SHISHA & LOUNGE',
+    description: 'Relax in our dedicated Arabian lounge adorned with silk cushions and lantern lighting, offering premium shisha, Arabic coffee, and rare teas.'
+  }
+]
+
+export default function About() {
+  return (
+    <section className="services-section" style={{ backgroundColor: 'var(--color-dark)', padding: '90px 0' }}>
+      {/* Section Header */}
+      <div className="section-header" style={{ marginBottom: '55px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px', marginBottom: '10px' }}>
+          <div style={{ height: '1px', width: '50px', background: 'linear-gradient(90deg, transparent, var(--color-gold))' }} />
+          <h4 className="title_block" style={{ margin: 0, fontSize: '14px', letterSpacing: '5px', color: 'var(--color-gold)' }}>EXQUISITE SERVICES</h4>
+          <div style={{ height: '1px', width: '50px', background: 'linear-gradient(90deg, var(--color-gold), transparent)' }} />
+        </div>
+        <div 
+          className="sub-title-widget" 
+          style={{ 
+            fontFamily: 'var(--font-script)', 
+            fontSize: '48px', 
+            color: 'var(--color-cream)', 
+            textAlign: 'center',
+            marginTop: '5px'
+          }}
+        >
+          A Complete Dining Experience
+        </div>
+      </div>
+
+      {/* Two Service Cards side by side */}
+      <div className="container">
+        <div className="services-container">
+          {services.map((svc, idx) => (
+            <div key={svc.id} className="service-card" style={{ flexDirection: idx === 0 ? 'row' : 'row-reverse' }}>
+              
+              {/* Image Side */}
+              <div className="service-img-wrap" style={{ minHeight: '360px' }}>
+                <img src={svc.image} alt={svc.imageAlt} />
+                {/* Decorative gold corner bracket top-left */}
+                <div style={{
+                  position: 'absolute',
+                  top: '16px',
+                  left: '16px',
+                  width: '30px',
+                  height: '30px',
+                  borderTop: '2px solid var(--color-gold)',
+                  borderLeft: '2px solid var(--color-gold)',
+                  opacity: 0.6
+                }} />
+                {/* Bottom-right corner bracket */}
+                <div style={{
+                  position: 'absolute',
+                  bottom: '16px',
+                  right: '16px',
+                  width: '30px',
+                  height: '30px',
+                  borderBottom: '2px solid var(--color-gold)',
+                  borderRight: '2px solid var(--color-gold)',
+                  opacity: 0.6
+                }} />
+              </div>
+
+              {/* Info Side */}
+              <div className="service-info">
+                <div className="service-icon-badge">
+                  {svc.icon}
+                </div>
+                <h5>{svc.title}</h5>
+                <div style={{ width: '40px', height: '1px', background: 'var(--color-rust)', margin: '12px auto' }} />
+                <p>{svc.description}</p>
+                <a
+                  href="#"
+                  style={{
+                    marginTop: '20px',
+                    display: 'inline-block',
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: '13px',
+                    fontWeight: '600',
+                    letterSpacing: '2px',
+                    textTransform: 'uppercase',
+                    color: 'var(--color-rust)',
+                    textDecoration: 'none',
+                    borderBottom: '1px solid var(--color-rust)',
+                    paddingBottom: '2px',
+                    transition: 'var(--transition-smooth)'
+                  }}
+                  onMouseOver={(e) => { e.target.style.color = 'var(--color-gold)'; e.target.style.borderColor = 'var(--color-gold)' }}
+                  onMouseOut={(e) => { e.target.style.color = 'var(--color-rust)'; e.target.style.borderColor = 'var(--color-rust)' }}
+                >
+                  Learn More →
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Zain Alsham — Indian-Arabic Fusion Restaurant | Nairobi</title>
+    <meta name="description" content="Zain Alsham at The Place @ 5th, 22 Fifth Parklands Ave, Nairobi. For orders call +2547 2887 8856. Experience premium Indian-Arabic fusion cuisine — aromatic majboos, levantine mezze, saffron kunafeh, live music, and shisha lounge." />
+    <meta name="keywords" content="hotel Nairobi, Indian Arabic restaurant, fusion cuisine, majboos, mezze, kunafeh, The Place 5th Parklands, luxury hotel Nairobi, saffron, lounge, live music" />
+
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Zain Alsham — Indian-Arabic Fusion Restaurant | Nairobi" />
+    <meta property="og:description" content="The Place @ 5th, 22 Fifth Parklands Ave, Nairobi. For orders: +2547 2887 8856. Where Levantine heritage meets Indian spice." />
+    <meta property="og:type" content="website" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/zeyn-alsham-LOGO.png" />
+    
+    <!-- PWA Manifest & Mobile Styling -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#120905" />
+    <link rel="apple-touch-icon" href="/zeyn-alsham-LOGO.png" />
+
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('[PWA] Service Worker registered with scope:', reg.scope))
+            .catch(err => console.log('[PWA] Service Worker registration failed:', err));
+        });
+      }
+    </script>
+
+    <!-- Entry point -->
+    <script type="module" src="/src/main.jsx"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
