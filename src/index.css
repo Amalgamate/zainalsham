@@ -396,7 +396,7 @@ a { text-decoration: none; }
 .menu-grid { display:flex; gap:0; margin-top:30px; align-items:stretch; }
 .menu-card { flex:1; display:flex; flex-direction:column; align-items:center; text-align:center; padding: 0 30px; }
 .menu-card h5 { font-family:var(--font-serif); font-size:22px; color:var(--color-rust); margin:20px 0 10px; letter-spacing:1px; }
-.menu-card p  { font-family:var(--font-sans); font-size:13px; color:var(--color-text-mid); line-height:1.7; max-width:280px; }
+.menu-card p  { font-family:var(--font-sans); font-size:14px; color:#ffffff; line-height:1.7; max-width:280px; }
 .vertical-divider-line { width:1px; background:linear-gradient(180deg,transparent,rgba(158,83,43,0.2),transparent); align-self:stretch; flex-shrink:0; }
 @media(max-width:900px){ .menu-grid{flex-direction:column;gap:40px} .vertical-divider-line{display:none} }
 
