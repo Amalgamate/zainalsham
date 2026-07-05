@@ -113,7 +113,11 @@ export default function Header({ currentPage, onNavigate }) {
           style={{ position:'fixed', inset:0, background:'rgba(0,0,0,0.5)', zIndex:9999, display:'flex' }}>
           <div className="panel" style={{ width:'300px', padding:'28px', display:'flex', flexDirection:'column', height:'100%', overflowY:'auto' }}>
             <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', paddingBottom:'20px', borderBottom:'1px solid rgba(158,83,43,0.15)' }}>
-              <strong>{CONTACT.name}</strong>
+              <img
+                src="/Zain-Al-Sham-Logo-Horizontal.png"
+                alt="Zain Al Sham Restaurant"
+                style={{ height:'44px', objectFit:'contain' }}
+              />
               <button className="close" aria-label="Close" onClick={() => setOpen(false)}>
                 <i className="fa-solid fa-xmark" />
               </button>
