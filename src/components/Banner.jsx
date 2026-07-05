@@ -83,7 +83,7 @@ export default function Banner() {
               textShadow: '2px 4px 12px rgba(0,0,0,0.6)'
             }}
           >
-            Our Unique
+            Our
             <span style={{ display: 'block', color: 'var(--color-gold)', marginTop: '6px' }}>
               Signature Dishes
             </span>
@@ -93,7 +93,7 @@ export default function Banner() {
             fontFamily: 'var(--font-sans)', fontSize: '14px', color: 'rgba(250,245,238,0.7)',
             maxWidth: '520px', margin: '20px auto 32px', lineHeight: 1.8, letterSpacing: '0.5px'
           }}>
-            From Nairobi with love — blending Levantine tradition, Indian warmth, and East African soul into every plate.
+            Our signature dishes celebrate the rich culinary heritage of Somalia and Syria, bringing together time-honored recipes, premium ingredients, and authentic spices.
           </p>
 
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -103,13 +103,13 @@ export default function Banner() {
               background: 'var(--gold-gradient)', color: 'var(--color-dark)',
               padding: '13px 28px', display: 'inline-block', transition: 'var(--transition-smooth)'
             }}>View Full Menu</a>
-            <a href="#dining" style={{
+            <a href="https://wa.me/254728878856" target="_blank" rel="noopener noreferrer" style={{
               fontFamily: 'var(--font-serif)', fontSize: '12px', fontWeight: 600,
               letterSpacing: '2px', textTransform: 'uppercase',
               background: 'transparent', color: 'var(--color-cream)',
               border: '1px solid rgba(250,245,238,0.35)',
               padding: '13px 28px', display: 'inline-block', transition: 'var(--transition-smooth)'
-            }}>Reserve Now</a>
+            }}>Order Now</a>
           </div>
         </div>
       </div>
