@@ -120,30 +120,11 @@ export default function App() {
   useScrollReveal(currentPage)
 
   const [showQrModal, setShowQrModal] = useState(false)
+  const [showMenuModal, setShowMenuModal] = useState(false)
   const [showToast,   setShowToast]   = useState(false)
   const [toastMsg,    setToastMsg]    = useState('')
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
-
-  const triggerMenuDownload = () => {
-    setToastMsg('📥 Downloading Zain Alsham Dining & Room Service Menu (PDF)...')
-    setShowToast(true)
-    setTimeout(() => setShowToast(false), 4000)
-    const link = document.createElement('a')
-    link.href = '#'
-    link.setAttribute('download', 'Zain_Alsham_Menu.pdf')
-    document.body.appendChild(link)
-    document.body.removeChild(link)
-  }
-
-  const triggerConciergeCall = () => {
-    setToastMsg('🛎️ Connecting with Zain Alsham Digital Concierge...')
-    setShowToast(true)
-    setTimeout(() => {
-      setShowToast(false)
-      window.location.href = 'tel:+254728878856'
-    }, 2000)
-  }
 
   return (
     <div style={{ position: 'relative' }}>
@@ -209,34 +190,75 @@ export default function App() {
         <span className="floating-cart-count">0</span>
       </div>
 
-      {/* ── Hotel Side-Sticky Panel ─────────────────────── */}
-      <div className="floating-settings-panel">
-        <div
-          className="settings-item"
-          title="Download PDF Menu"
-          onClick={triggerMenuDownload}
-        >
-          <span className="settings-badge" style={{ background: '#cf7321', color: '#fff' }}>PDF</span>
-          <i className="fa-solid fa-file-arrow-down" style={{ fontSize:'14px' }} />
-        </div>
-
-        <div
-          className="settings-item"
-          title="Scan Guest Portal Code"
-          onClick={() => setShowQrModal(true)}
-        >
-          <span className="settings-badge" style={{ background: '#25d366', color: '#fff' }}>SCAN</span>
-          <i className="fa-solid fa-qrcode" style={{ fontSize:'14px' }} />
-        </div>
-
-        <div
-          className="settings-item"
-          title="Call Front Desk Concierge"
-          onClick={triggerConciergeCall}
-        >
-          <i className="fa-solid fa-bell-concierge" style={{ fontSize:'14px' }} />
-        </div>
+      {/* ── Redesigned Floating Menu Button ──────────────── */}
+      <div
+        className="floating-menu-btn"
+        title="View Menu (PDF)"
+        onClick={() => setShowMenuModal(true)}
+      >
+        <i className="fa-solid fa-utensils" />
+        <span>Menu</span>
       </div>
+
+      {/* ── PDF Menu Modal ──────────────────────────────── */}
+      {showMenuModal && (
+        <div className="pdf-modal-overlay" onClick={() => setShowMenuModal(false)}>
+          <div className="pdf-modal-container" onClick={(e) => e.stopPropagation()}>
+            <div className="pdf-modal-header">
+              <h3 className="pdf-modal-title">
+                <i className="fa-solid fa-book-open" style={{ color: 'var(--color-gold)' }} />
+                <span>Zain Al Sham Menu 2026</span>
+              </h3>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                <a 
+                  href="/Zain%20Al%20Sham%20Menu%202026.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="pdf-external-link"
+                  style={{
+                    color: 'var(--color-gold)',
+                    textDecoration: 'none',
+                    fontSize: '13px',
+                    fontWeight: '600',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    border: '1px solid var(--color-gold)',
+                    padding: '6px 12px',
+                    borderRadius: '2px',
+                    transition: 'all 0.3s'
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.background = 'var(--color-gold)';
+                    e.currentTarget.style.color = '#120905';
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.background = 'transparent';
+                    e.currentTarget.style.color = 'var(--color-gold)';
+                  }}
+                >
+                  <i className="fa-solid fa-expand" />
+                  <span>Open Fullscreen</span>
+                </a>
+                <button 
+                  className="pdf-modal-close-btn" 
+                  onClick={() => setShowMenuModal(false)}
+                  aria-label="Close menu"
+                >
+                  <i className="fa-solid fa-xmark" />
+                </button>
+              </div>
+            </div>
+            <div className="pdf-modal-body">
+              <iframe 
+                src="/Zain%20Al%20Sham%20Menu%202026.pdf#toolbar=0" 
+                className="pdf-iframe" 
+                title="Zain Al Sham Menu 2026"
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ── QR Modal ────────────────────────────────────── */}
       {showQrModal && (
