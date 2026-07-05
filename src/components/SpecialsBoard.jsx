@@ -203,7 +203,7 @@ export default function SpecialsBoard() {
               <p style={{
                 fontFamily: 'var(--font-sans)', fontSize: '11px', letterSpacing: '1px',
                 color: 'rgba(250,245,238,0.4)', margin: '0 0 16px', textTransform: 'uppercase'
-              }}>Deliver to your room or collect from the Lounge</p>
+              }}>Deliver to your door or collect from the Lounge</p>
               <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
                 <a href="https://wa.me/254728878856" target="_blank" rel="noreferrer" style={{
                   background: '#25d366', color: '#fff',

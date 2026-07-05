@@ -173,7 +173,7 @@ export default function AboutPage() {
                 lineHeight: '1.8',
                 margin: '0 0 35px 0'
               }}>
-                Whether you're visiting our rooms, dining in our restaurant, or relaxing in the Saffron Lounge listening to the live Oud, we aim to provide an unforgettable international experience with a vibrant local Nairobi touch.
+                Whether you're dining in our restaurant, or relaxing in the Saffron Lounge listening to the live Oud, we aim to provide an unforgettable international experience with a vibrant local Nairobi touch.
               </p>
 
               {/* Rectangular Outline Button */}

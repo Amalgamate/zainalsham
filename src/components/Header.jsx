@@ -80,10 +80,6 @@ export default function Header({ currentPage, onNavigate }) {
                    style={{ color: currentPage === 'home' ? 'var(--color-rust)' : '', transition: 'var(--transition-smooth)' }}>Home</a>
               </li>
               <li>
-                <a href="#rooms" onClick={(e) => { e.preventDefault(); onNavigate('rooms'); }} 
-                   style={{ color: currentPage === 'rooms' ? 'var(--color-rust)' : '', transition: 'var(--transition-smooth)' }}>Rooms &amp; Suites</a>
-              </li>
-              <li>
                 <a href="#dining" onClick={(e) => { e.preventDefault(); onNavigate('dining'); }} 
                    style={{ color: currentPage === 'dining' ? 'var(--color-rust)' : '', transition: 'var(--transition-smooth)' }}>Dining</a>
               </li>
@@ -96,9 +92,9 @@ export default function Header({ currentPage, onNavigate }) {
                    style={{ color: currentPage === 'contact' ? 'var(--color-rust)' : '', transition: 'var(--transition-smooth)' }}>Contact</a>
               </li>
               <li>
-                <a href="#rooms" onClick={(e) => { e.preventDefault(); onNavigate('rooms'); }} className="nav-book-btn" style={{ borderRadius: '2px', transition: 'var(--transition-smooth)' }}>
+                <a href="#contact" onClick={(e) => { e.preventDefault(); onNavigate('contact'); }} className="nav-book-btn" style={{ borderRadius: '2px', transition: 'var(--transition-smooth)' }}>
                   <i className="fa-regular fa-calendar-check" style={{ marginRight:'6px' }} />
-                  Book Now
+                  Reserve Table
                 </a>
               </li>
             </ul>
@@ -126,7 +122,6 @@ export default function Header({ currentPage, onNavigate }) {
               <ul style={{ listStyle:'none', padding:0, margin:0, display:'flex', flexDirection:'column', gap:'6px' }}>
                 {[
                   { icon:'fa-solid fa-house',            label:'Home',            page: 'home' },
-                  { icon:'fa-solid fa-bed',               label:'Rooms & Suites',  page: 'rooms' },
                   { icon:'fa-solid fa-utensils',          label:'Dining',          page: 'dining' },
                   { icon:'fa-solid fa-compass',           label:'Our Story',       page: 'about' },
                   { icon:'fa-solid fa-phone',             label:'Contact',         page: 'contact' }
@@ -157,8 +152,8 @@ export default function Header({ currentPage, onNavigate }) {
                 style={{ display:'flex', alignItems:'center', gap:'8px', color:'var(--color-rust)', fontWeight:'600', fontSize:'14px', marginBottom:'16px', textDecoration:'none' }}>
                 <i className="fa-solid fa-phone" /> {CONTACT.phone}
               </a>
-              <button className="btn-dark" onClick={() => { setOpen(false); onNavigate('rooms'); }} style={{ width:'100%', fontSize:'13px', padding:'12px' }}>
-                <i className="fa-regular fa-calendar-check" style={{ marginRight:'8px' }} />Book a Room
+              <button className="btn-dark" onClick={() => { setOpen(false); onNavigate('contact'); }} style={{ width:'100%', fontSize:'13px', padding:'12px' }}>
+                <i className="fa-regular fa-calendar-check" style={{ marginRight:'8px' }} />Reserve a Table
               </button>
             </div>
           </div>

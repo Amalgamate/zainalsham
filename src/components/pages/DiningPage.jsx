@@ -220,11 +220,11 @@ export default function DiningPage() {
           }}>
             <p className="text-cursive" style={{ fontFamily: 'var(--font-script)', fontSize: '26px',
               color: 'var(--color-rust)', margin: '0 0 8px' }}>
-              Want dining delivered straight to your suite?
+              Want dining delivered straight to your door?
             </p>
             <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', letterSpacing: '1px',
               textTransform: 'uppercase', color: 'var(--color-muted)', margin: '0 0 18px' }}>
-              Available 24/7 for hotel guests at The Place @ 5th
+              Available daily at The Place @ 5th
             </p>
             <a href="tel:+254728878856" style={{
               display: 'inline-flex', alignItems: 'center', gap: '8px',

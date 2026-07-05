@@ -83,7 +83,7 @@ export default function ContactPage() {
                 lineHeight: '1.8',
                 marginBottom: '35px'
               }}>
-                Located along the exclusive 5th Parklands Avenue, Zain Alsham offers a unique blend of heritage and hospitality. Contact our reception for room reservations, private banquets, corporate meetings, or food delivery.
+                Located along the exclusive 5th Parklands Avenue, Zain Alsham offers a unique blend of heritage and hospitality. Contact our reception for table reservations, private banquets, corporate meetings, or food delivery.
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>

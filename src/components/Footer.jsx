@@ -101,7 +101,6 @@ export default function Footer({ onNavigate }) {
               <nav style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 {[
                   { label: 'Home', page: 'home' },
-                  { label: 'Rooms & Suites', page: 'rooms' },
                   { label: 'Dining & Menu', page: 'dining' },
                   { label: 'Our Story', page: 'about' },
                   { label: 'Contact', page: 'contact' }

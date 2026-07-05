@@ -4,7 +4,7 @@ const slides = [
   {
     image: '/images/chef_fire_grill.png',
     small: 'WELCOME TO ZAIN ALSHAM',
-    title: 'Where Levantine Heritage<br/>Meets Indian Spice',
+    title: 'Where Somali & Syrian<br/>Culinary Heritage Meets',
     subtitle: 'Experience a luxurious fusion of flavors, served in a breathtaking palace-inspired setting.',
     cta: 'Discover Our Story'
   },

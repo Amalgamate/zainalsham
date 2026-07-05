@@ -11,7 +11,6 @@ import Newsletter           from './components/Newsletter'
 import Footer               from './components/Footer'
 
 // Subpages
-import RoomsPage    from './components/pages/RoomsPage'
 import DiningPage   from './components/pages/DiningPage'
 import AboutPage    from './components/pages/AboutPage'
 import ContactPage  from './components/pages/ContactPage'
@@ -38,7 +37,7 @@ function useScrollReveal(currentPage) {
 
 // ── Delivery marquee strip ──────────────────────────────────────
 const BADGES = [
-  { icon: 'fa-motorcycle',        text: 'Free Room Delivery · Orders above KSh 1,500' },
+  { icon: 'fa-motorcycle',        text: 'Free Local Delivery · Orders above KSh 1,500' },
   { icon: 'fa-clock',             text: 'Delivery in 20 – 35 Minutes' },
   { icon: 'fa-fire-flame-curved', text: 'Live Kitchen · Open Until Midnight' },
   { icon: 'fa-star',              text: 'Daily Chef Specials Available Now' },
@@ -160,7 +159,6 @@ export default function App() {
           </>
         )}
 
-        {currentPage === 'rooms'   && <RoomsPage />}
         {currentPage === 'dining'  && <DiningPage />}
         {currentPage === 'about'   && <AboutPage />}
         {currentPage === 'contact' && <ContactPage />}
@@ -303,7 +301,7 @@ export default function App() {
               fontFamily: 'var(--font-sans)', fontSize: '13px',
               color: 'var(--color-muted)', marginBottom: '28px', lineHeight: '1.5'
             }}>
-              Scan with your mobile device to access digital room service ordering, book spa sessions, and view the Nairobi tourist guide.
+              Scan with your mobile device to access our digital menu, make table reservations, and join our loyalty club.
             </p>
 
             <div style={{
