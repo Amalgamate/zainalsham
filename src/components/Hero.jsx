@@ -114,17 +114,19 @@ export default function Hero() {
                 }}
                 dangerouslySetInnerHTML={{ __html: s.title }}
               />
-              {/* Cursive subtitle */}
+              {/* Raleway subtitle */}
               <p 
-                className="text-cursive" 
                 style={{ 
-                  fontFamily: 'var(--font-script)', 
-                  fontSize: 'clamp(20px, 4vw, 32px)', 
+                  fontFamily: 'var(--font-raleway)', 
+                  fontSize: 'clamp(15px, 2.2vw, 20px)', 
+                  fontWeight: '300',
+                  fontStyle: 'italic',
                   color: '#fff', 
                   opacity: 0.9, 
                   margin: '0 auto 30px auto', 
                   maxWidth: '650px',
-                  textTransform: 'none'
+                  textTransform: 'none',
+                  letterSpacing: '0.8px'
                 }}
               >
                 {s.subtitle}
