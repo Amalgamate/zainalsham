@@ -56,10 +56,6 @@ function useCountdown(target) {
 
 export default function SpecialsBoard() {
   const { h, m, s } = useCountdown(getHappyHourEnd())
-  const [activeDay] = useState(() => {
-    const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
-    return days[new Date().getDay()]
-  })
 
   return (
     <section className="specials-board reveal">
@@ -86,7 +82,7 @@ export default function SpecialsBoard() {
             color: 'rgba(250,245,238,0.5)', letterSpacing: '2px',
             textTransform: 'uppercase', margin: 0
           }}>
-            {activeDay} · Curated by Executive Chef Abbas Dahir
+            Chef's Table Today · Curated by Executive Chef Abbas Dahir
           </p>
         </div>
 

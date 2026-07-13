@@ -29,12 +29,12 @@ export default function Footer({ onNavigate }) {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '40px', justifyContent: 'space-between' }}>
 
             {/* Column 1: Logo & Tagline */}
-            <div style={{ flex: '1 1 220px', minWidth: '200px' }}>
+            <div style={{ flex: '1 1 220px', minWidth: '200px', textAlign: 'center' }}>
               <a href="#home" onClick={handleNav('home')} style={{ display: 'inline-block', marginBottom: '20px' }}>
                 <img
                   src="/zeyn-alsham-LOGO-white.png"
                   alt="Zain Alsham Logo"
-                  style={{ height: '64px', objectFit: 'contain' }}
+                  style={{ height: '110px', objectFit: 'contain' }}
                 />
               </a>
               <p style={{
@@ -47,7 +47,7 @@ export default function Footer({ onNavigate }) {
               }}>
                 Authentic Somali & Syrian flavours, where time-honored recipes meet warm Nairobi hospitality.
               </p>
-              <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', justifyContent: 'center' }}>
                 {[
                   { icon: 'fa-brands fa-instagram', href: 'https://www.instagram.com/zainalshaam2024/?hl=en', label: 'Instagram' },
                   { icon: 'fa-brands fa-facebook-f', href: 'https://www.facebook.com/profile.php?id=100076351324705', label: 'Facebook' },

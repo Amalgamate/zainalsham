@@ -6,14 +6,44 @@ const slides = [
     small: 'WELCOME TO ZAIN ALSHAM',
     title: 'Where Somali & Syrian<br/>Culinary Heritage Meets',
     subtitle: 'Experience a luxurious fusion of flavors, served in a breathtaking palace-inspired setting.',
-    cta: 'Discover Our Story'
+    cta: 'Discover Our Story',
+    link: '#about'
   },
   {
     image: '/images/majboos_dish.png',
     small: 'EXQUISITE CULINARY ARTISTRY',
-    title: 'Slow-Cooked Aromas &<br/>Hand-Crushed Spices',
-    subtitle: 'Taste handcrafted mezze, slow-cooked royal majboos, and signature saffron desserts.',
-    cta: 'Explore The Menu'
+    title: 'FLAME GRILLED TO<br/>PERFECTION',
+    subtitle: 'From tender Shish Tawook and succulent kebabs to slow-marinated charcoal grills, every bite celebrates authentic Levantine craftsmanship.',
+    ctas: [
+      { text: 'View Signature Grills', link: '#menu' },
+      { text: 'Order Online', link: '#order' }
+    ]
+  },
+  {
+    image: '/images/Somali_Family_Dining.png',
+    small: 'LUXURIOUS HOSPITALITY',
+    title: 'ROYAL DINING<br/>EXPERIENCE',
+    subtitle: "Whether it's a family gathering, business lunch, or romantic dinner, enjoy an unforgettable dining experience inspired by Middle Eastern luxury.",
+    cta: 'Book Your Table',
+    link: '#restaurant'
+  },
+  {
+    image: '/images/outside catering.jpeg',
+    small: 'CATERING & EVENTS',
+    title: 'BRINGING LEVANTINE<br/>FLAVOURS TO YOUR EVENTS',
+    subtitle: 'Corporate catering, weddings, birthdays, family gatherings, and private celebrations prepared with exceptional quality and impeccable service.',
+    ctas: [
+      { text: 'Request Catering', link: '#contact' },
+      { text: 'Contact Us', link: '#contact' }
+    ]
+  },
+  {
+    image: '/images/saffron_kunafa.png',
+    small: 'SIGNATURE DESSERTS',
+    title: 'END EVERY MEAL ON<br/>A SWEET NOTE',
+    subtitle: 'Indulge in authentic kunafeh, baklava, halawiyat, and freshly brewed Arabic coffee crafted to perfection.',
+    cta: 'View Desserts',
+    link: '#menu'
   }
 ]
 
@@ -99,8 +129,18 @@ export default function Hero() {
               >
                 {s.subtitle}
               </p>
-              <div style={{ marginTop: '20px' }}>
-                <a className="btn-gold" href="#">{s.cta}</a>
+              <div style={{ marginTop: '20px', display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                {s.ctas ? (
+                  s.ctas.map((btn, bi) => (
+                    <a key={bi} className="btn-gold" href={btn.link || '#'}>
+                      <span>{btn.text}</span>
+                    </a>
+                  ))
+                ) : (
+                  <a className="btn-gold" href={s.link || '#'}>
+                    <span>{s.cta}</span>
+                  </a>
+                )}
               </div>
             </div>
           </div>

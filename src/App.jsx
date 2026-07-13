@@ -37,8 +37,8 @@ function useScrollReveal(currentPage) {
 
 // ── Delivery marquee strip ──────────────────────────────────────
 const BADGES = [
-  { icon: 'fa-motorcycle',        text: 'Free Local Delivery · Orders above KSh 1,500' },
   { icon: 'fa-clock',             text: 'Delivery in 20 – 35 Minutes' },
+  { icon: 'fa-motorcycle',        text: 'Free Delivery on Orders Above KSh 3,000' },
   { icon: 'fa-fire-flame-curved', text: 'Live Kitchen · Open Until Midnight' },
   { icon: 'fa-star',              text: 'Daily Chef Specials Available Now' },
   { icon: 'fa-shield-halved',     text: 'Halal Certified · Allergen Aware Menu' },

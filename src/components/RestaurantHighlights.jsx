@@ -2,9 +2,9 @@ import React from 'react'
 
 const items = [
   {
-    title: 'AROMATIC MAJBOOS',
+    title: 'AROMATIC LAMB MANDI',
     img: '/images/majboos_dish.png',
-    text: 'A royal feast of saffron-infused basmati rice, tender spiced lamb, and toasted nuts.',
+    text: 'Slow-cooked tender lamb served with traditional mandi rice',
     shapeClass: 'left-arch'
   },
   {
@@ -16,7 +16,7 @@ const items = [
   {
     title: 'HALAWIYAT',
     img: '/images/saffron_kunafa.png',
-    text: 'Savor the finest collection of authentic Arabic sweets, featuring delicate pastries, premium nuts, and aromatic syrups inspired by generations of culinary tradition.',
+    text: 'Savour the finest collection of authentic Arabic Sweets, featuring delicate pastries & aromatic syrups inspired by generations of culinary tradition.',
     shapeClass: 'right-arch'
   }
 ]
@@ -36,7 +36,7 @@ export default function RestaurantHighlights() {
 
       <div className="section-header">
         <h4 className="title_block light" style={{ color: 'var(--color-cream)' }}>OUR RESTAURANT</h4>
-        <div className="sub-title-widget" style={{ color: 'var(--color-gold)' }}>Quality Products</div>
+        <div className="sub-title-widget" style={{ color: 'var(--color-gold)', fontFamily: 'var(--font-script)', fontStyle: 'normal' }}>Quality Cuisine</div>
       </div>
 
       {/* Rust Pattern Background Area for Images */}
